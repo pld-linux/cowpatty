@@ -1,4 +1,3 @@
-
 Summary:	coWPAtty - tool to audit the security of pre-shared keys selected in WiFi Protected Access (WPA) networks
 Summary(pl):	coWPAtty - narzêdzie do badania zabezpieczeñ kluczy PSK zabranych z sieci szyfrowanych metod± WPA
 Name:		cowpatty
@@ -9,6 +8,8 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/cowpatty/%{name}-%{version}.tgz
 # Source0-md5:	3e84ea75ea014381b1c77a824714bdde
 URL:		http://cowpatty.sourceforge.net/
+BuildRequires:	libpcap-devel
+BuildRequires:	openssl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -23,7 +24,9 @@ z sieci szyfrowanych metod± WPA.
 %setup -q -n %{name}
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -Wall -DOPENSSL"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,5 +39,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGELOG COPYING FAQ README TODO WISHLIST
+%doc AUTHORS CHANGELOG FAQ README TODO WISHLIST
 %attr(755,root,root) %{_bindir}/cowpatty
