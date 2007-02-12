@@ -1,5 +1,5 @@
 Summary:	coWPAtty - tool to audit the security of pre-shared keys selected in WiFi Protected Access (WPA) networks
-Summary(pl):	coWPAtty - narzêdzie do badania zabezpieczeñ kluczy PSK zabranych z sieci szyfrowanych metod± WPA
+Summary(pl.UTF-8):   coWPAtty - narzÄ™dzie do badania zabezpieczeÅ„ kluczy PSK zabranych z sieci szyfrowanych metodÄ… WPA
 Name:		cowpatty
 Version:	2.0
 Release:	0.1
@@ -16,9 +16,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 coWPAtty is designed to audit the security of pre-shared keys selected
 in WiFi Protected Access (WPA) networks.
 
-%description -l pl
-coWPAtty zosta³ stworzony do badania zabezpieczeñ kluczy PSK zabranych
-z sieci szyfrowanych metod± WPA.
+%description -l pl.UTF-8
+coWPAtty zostaÅ‚ stworzony do badania zabezpieczeÅ„ kluczy PSK zabranych
+z sieci szyfrowanych metodÄ… WPA.
 
 %prep
 %setup -q -n %{name}
